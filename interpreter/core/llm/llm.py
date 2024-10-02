@@ -161,6 +161,7 @@ class Llm:
                         if self.interpreter.verbose:
                             print("Removing image message!")
                 # Idea: we could set detail: low for the middle messages, instead of deleting them
+        """        
         elif self.supports_vision == False and self.vision_renderer:
             for img_msg in image_messages:
                 if img_msg["format"] != "description":
@@ -198,7 +199,7 @@ class Llm:
                         )
                         img_msg["format"] = "description"
                         img_msg["content"] = ""
-
+        """
         # Convert to OpenAI messages format
         messages = convert_to_openai_messages(
             messages,
