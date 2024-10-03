@@ -50,6 +50,7 @@ class OpenInterpreter:
         safe_mode="off",
         shrink_images=True,
         loop=False,
+        max_iterations=6,
         loop_message="""Proceed. You CAN run code on my machine. If the entire task I asked for is done, say exactly 'The task is done.' If you need some specific information (like username or password) say EXACTLY 'Please provide more information.' If it's impossible, say 'The task is impossible.' (If I haven't provided a task, say exactly 'Let me know what you'd like to do next.') Otherwise keep going.""",
         loop_breakers=[
             "The task is done.",
@@ -103,6 +104,7 @@ class OpenInterpreter:
 
         # Loop messages
         self.loop = loop
+        self.max_iterations = max_iterations
         self.loop_message = loop_message
         self.loop_breakers = loop_breakers
 

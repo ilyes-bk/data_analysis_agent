@@ -18,16 +18,15 @@ def respond(interpreter):
 
     last_unsupported_code = ""
     insert_loop_message = False
-    max_iterations=6
     iteration_count = 0
 
     while True:
         iteration_count += 1
-        if iteration_count > max_iterations:  # Check if max iterations exceeded
+        if iteration_count > interpreter.max_iterations:  # Check if max iterations exceeded
             yield {
                 "role": "assistant",
                 "type": "message",
-                "content": f"Execution stopped: exceeded max iterations of {max_iterations}.",
+                "content": f"Execution stopped: exceeded max iterations of {interpreter.max_iterations}.",
             }
             break
         ## RENDER SYSTEM MESSAGE ##
